@@ -40,10 +40,11 @@ else
             }
             else
             {
-                <div class="@item.CSS">
+                <ChatMessage CSS="@item.CSS" Username="@item.Username" Body="@item.Body" />
+                @*<div class="@item.CSS">
                     <div class="user">@item.Username</div>
                     <div class="msg">@item.Body</div>
-                </div>
+                </div>*@
             }
         }
         <hr />
@@ -131,26 +132,8 @@ else
         }
     }
 
-    //record Message(string Username, string Body, bool Mine)
-    //{
-    //    public bool IsNotice => Body.StartsWith("[Notice]");
-
-    //    public string CSS => Mine ? "sent" : "received";
-    //}
-
-    class Message
+    record Message(string Username, string Body, bool Mine)
     {
-        public Message(string username, string body, bool mine)
-        {
-            Username = username;
-            Body = body;
-            Mine = mine;
-        }
-
-        public string Username { get; set; }
-        public string Body { get; set; }
-        public bool Mine { get; set; }
-        
         public bool IsNotice => Body.StartsWith("[Notice]");
 
         public string CSS => Mine ? "sent" : "received";

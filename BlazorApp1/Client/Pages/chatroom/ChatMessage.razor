@@ -1,0 +1,16 @@
+﻿
+<div class="@CSS">
+    <div class="user">@Username</div>
+    <div class="msg">@Body</div>
+</div>
+
+@code {
+    [Parameter]
+    public string? CSS { get; set; }
+
+    [Parameter]
+    public string Username { get; set; }
+
+    [Parameter]
+    public string Body { get; set; }
+}

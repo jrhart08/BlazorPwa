@@ -44,5 +44,9 @@ async function onFetch(event) {
         cachedResponse = await cache.match(request);
     }
 
+    if (event.request.method === 'POST') {
+
+    }
+
     return cachedResponse || fetch(event.request);
 }
